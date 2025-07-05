@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Türkiye Air Quality – Workflow</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+  <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="assets/css/main.css" />
+  <link rel="stylesheet" href="assets/css/custom-styles.css" />
+  
+
+</head>
+
+<body class="is-preload">
+
+<!-- Navigation -->
+<nav style="
+  background: linear-gradient(to right, rgba(50, 141, 168, 0.8), rgba(211, 131, 18, 0.8));
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: white;
+  font-family: sans-serif;
+  position: sticky;
+  top: 0;
+  z-index: 10000;">
+  <div style="font-size: 1.5rem; font-weight: bold;">Türkiye Air Quality</div>
+  <div style="display: flex; gap: 2rem;">
+    <a href="index.html" style="color: white; text-decoration: none;">Home</a>
+    <a href="workflow.html" style="color: white; text-decoration: none;">Workflow</a>
+    <a href="results.html" style="color: white; text-decoration: none;">Results</a>
+    <a href="webgis.html" style="color: white; text-decoration: none;">WebGIS</a>
+  </div>
+</nav>
+
+
+
+<!-- Workflow Section -->
+
+<section id="third" class="main">
+    <header>
+       
+            <div class="container">
+              <h2>Project Workflow Overview</h2>
+              <p>Step-by-step data processing and geospatial analysis pipeline used in the Türkiye Air Quality study.</p>
+            </div>
+          
+        
+    </header>
+    <div class="content dark style3">
+        <div class="container">
+            <span class="image featured"><img src="/assets/images/turkiyemap.png" alt="" /></span>
+            <div class="row">
+                <div class="content dark style2">
+                    <h3>Turkey</h3>
+                    <p>Turkey is a geographically diverse country located at the crossroads of Europe and Asia. The 
+                      majority of its territory lies in Asia (Anatolia), while a smaller portion extends into Europe (Eastern 
+                      Thrace). It is bordered by eight countries and surrounded by three major bodies of water: the 
+                      Aegean Sea to the west, the Mediterranean Sea to the south, and the Black Sea to the north.</p>
+                    <p>The country's landscape includes a variety of geographical features such as mountains, coastal 
+                      plains, inland plateaus, and river valleys. This diversity contributes to a range of climatic zones — 
+                      from the warm, dry Mediterranean climate along the coast to the more continental climate in the 
+                      interior regions.</p>
+                </div>
+                <div class="content dark style2">
+                    <p>Turkey’s environmental challenges include air and water pollution, deforestation, and vulnerability 
+                      to natural hazards such as earthquakes and droughts. Its strategic position also makes it 
+                      significant for regional water management, energy transport, and environmental monitoring.
+                      </p>
+                    <p>Major urban centers include Ankara, the capital, and Istanbul, the largest city, which lies on both 
+                      sides of the Bosporus Strait — a key waterway connecting the Black Sea to the Mediterranean.</p>
+                   
+                </div>
+                <div class="content dark style2">
+                  <p>Types of data we have used:
+                    </p>
+                    <h3>• CAMS Europe Air Quality Reanalyses</h3>
+                  <p>a high-resolution dataset developed by the Copernicus 
+                     Atmosphere Monitoring Service.</p>
+                    <p>The platform visualizes hourly concentrations of key pollutants such as PM2.5, PM10, NO₂, O₃, 
+                      and CO, with a spatial resolution of approximately 10 km. The data is available at multiple vertical 
+                      levels, allowing users to assess pollution not only at the surface but also through different layers 
+                      of the atmosphere.</p>
+                      <p>By integrating validated and near-real-time satellite-modelled data, this tool supports:
+                       </p>
+                        <p>By integrating validated and near-real-time satellite-modelled data, this tool supports:
+                          • Identifying pollution hotspots
+                          • Analyzing seasonal and long-term trends
+                          • Exploring vertical pollution profiles
+                          • Supporting informed decision-making in public health and environmental planning</p> 
+
+                          <h3>• Copernicus Satellite Land Cover Dataset</h3>
+                  <p>This dataset delivers global annual land cover 
+                    maps from 1992 to the present, with a spatial resolution of 300 meters. It is based on satellite 
+                    observations and classifies land cover into 22 categories following the international FAO Land 
+                    Cover Classification System (LCCS).</p>
+
+                    <h3>• WorldPop</h3>
+                  <p>provides robust, high-resolution demographic data that fills critical gaps in 
+                    traditional census sources—especially in underserved regions. Its global gridded population 
+                    outputs, with detailed age and gender compositions, are used to inform public health strategies, 
+                    disaster response, urban development, and policymaking. Its commitment to transparency, 
+                    collaborations, and open-access tools makes it a cornerstone in spatial demography and global 
+                    development mapping.</p>
+                  
+              </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="second" class="main">
+  <header>
+    <div class="container">
+      
+      <h2>Step 1  Data Collection</h2>
+      
+      
+    </div>
+  </header>
+
+  <div class="content dark style2">
+    <div class="container">
+      <div class="row">
+          <div>
+              
+              <p>This project focuses on the spatial and temporal analysis of air pollutants in Turkey. We used data 
+                from the CAMS European Air Quality Reanalysis service, specifically targeting three major 
+                pollutants:</p>
+              <p>nitrogen dioxide (NO₂), fine particulate matter (PM2.5), and coarse particulate matter 
+                (PM10). The datasets, in NetCDF format, cover the period from January 2013 to December 2022 .</p>
+          </div>      
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+<section id="second" class="main">
+    <header>
+      <div class="container">
+        <h2>Step 2  Pollutant maps (NO2, PM2.5, PM10)</h2>
+        <p>for the month of December 2022</p>
+        
+      </div>
+    </header>
+  
+    <div class="content dark style2">
+      <div class="container">
+        <div class="row">
+            <div>
+                
+                <p>Collective data were imported into QGIS as mesh layers, reprojected to EPSG:4326 (WGS 84), and 
+                  processed using the Mesh Calculator to obtain monthly average concentrations for December 
+                  2022. The outputs were then converted to GeoTIFF raster layers using the Rasterize Mesh 
+                  Dataset tool .</p>
+                
+            </div>
+
+            <div class="image-grid">
+                <div class="image-box">
+                  <img src="assets/images/NO2_Cams.jpg" alt="Turkey CAMS no2 2022 12" />
+                  <div class="caption">Turkey NO₂ CAMS 2022-12</div>
+                </div>
+                <div class="image-box">
+                  <img src="assets/images/PM25_cams.jpg" alt="Turkey CAMS pm25 2022 12" />
+                  <div class="caption">Turkey PM₂.₅ CAMS 2022-12</div>
+                </div>
+                <div class="image-box">
+                  <img src="assets/images/PM10_cams.jpg" alt="Turkey CAMS pm10 2022 12" />
+                  <div class="caption">Turkey PM₁₀ CAMS 2022-12</div>
+                </div>
+              </div>              
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <section id="second" class="main">
+    <header>
+      <div class="container">
+        <h2>Step 2  Turkey 2022 Average pollutant maps (NO2, PM2.5, PM10)</h2>
+        
+      </div>
+    </header>
+  
+    <div class="content dark style2">
+      <div class="container">
+        <div class="row">
+            <div>
+                
+                <p>To analyze long-term trends, we aggregated the monthly rasters into annual averages using the 
+                  r.series tool in QGIS. We created average pollutant maps for each year, with a focus on the year 
+                  2022.</p>
+    
+            </div>
+            <div class="image-grid">
+                <div class="image-box">
+                  <img src="assets/images/NO2_average.jpg"/>
+                  <div class="caption">Turkey 2022 Average NO₂</div>
+                </div>
+                <div class="image-box">
+                  <img src="assets/images/PM25_average.jpg" alt="Turkey 2022 Average pollutant maps" />
+                  <div class="caption">Turkey 2022 Average PM₂.₅</div>
+                </div>
+                <div class="image-box">
+                  <img src="assets/images/PM10_average.jpg" alt="Turkey 2022 Average pollutant maps" />
+                  <div class="caption">Turkey 2022 Average PM₁₀</div>
+                </div>
+              </div> 
+      </div>
+    </div>
+  </section>
+
+
+  <section id="second" class="main">
+    <header>
+      <div class="container">
+        <h2>Step 3  Turkey 2020 Concentration pollutant maps (NO2, PM2.5, PM10)</h2>
+        
+      </div>
+    </header>
+  
+    <div class="content dark style2">
+      <div class="container">
+        <div class="row">
+            <div>
+                
+                <p>Subsequently, each annual average map was reclassified into five categories according to the EU 
+                  Air Quality Standards:</p>
+                <p>
+                  •	 NO₂: 40 µg/m³
+
+                  •	 PM2.5: 25 µg/m³
+               
+                  •	 PM10: 40 µg/m³</p>
+                  <div class="image-grid">
+                    <div class="image-box_6">
+                      <p>EU is reporting their annual according concentration maps according to:</p>
+                      <img src="assets/images/Annual Limit Values.png"/>
+                     
+                    </div>
+            
+                  </div> 
+
+                  <p>This classification helped to visualize areas of high and low pollution concentration through 
+                    thematic concentration maps for 2020 .</p>
+            </div>
+            <div class="image-grid">
+                <div class="image-box">
+                  <img src="assets/images/NO2_concentration.jpg"/>
+                  <div class="caption">Turkey 2020 Concentration NO₂</div>
+                </div>
+                <div class="image-box">
+                  <img src="assets/images/PM25_concentration.jpg"  />
+                  <div class="caption">Turkey 2020 Concentration PM₂.₅</div>
+                </div>
+                <div class="image-box">
+                  <img src="assets/images/PM10_concentration.jpg" alt="Turkey 2022 Average pollutant maps" />
+                  <div class="caption">Turkey 2020 Concentration PM₁₀</div>
+                </div>
+              </div> 
+      </div>
+    </div>
+  </section>
+
+
+
+  <section id="second" class="main">
+    <header>
+      <div class="container">
+        <h2>Step 4  NO2/PM2.5/PM10 2022 Annual Average Difference from the 2017-2021 mean</h2>
+        
+      </div>
+    </header>
+  
+    <div class="content dark style2">
+      <div class="container">
+        <div class="row">
+            <div>
+                
+                <p>We calculated the Annual Average Difference (AAD) for 2022 in comparison with the 2017–
+                  2021 average. This step, carried out using the Raster Calculator, allowed us to detect anomalies 
+                  or improvements in air quality at the regional scale .</p>
+            </div>
+            <div class="image-grid">
+                <div class="image-box">
+                  <img src="assets/images/NO2_2017-21.jpg"/>
+                  <div class="caption">Turkey NO₂ 2017-2021 AAD 2022</div>
+                </div>
+                <div class="image-box">
+                  <img src="assets/images/PM25_2017-21.jpg"  />
+                  <div class="caption">Turkey PM₂.₅ 2017-2021 AAD 2022</div>
+                </div>
+                <div class="image-box">
+                  <img src="assets/images/PM10_2017-21.jpg" />
+                  <div class="caption">Turkey PM₁₀ 2017-2021 AAD 2022</div>
+                </div>
+              </div> 
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <section id="second" class="main">
+    <header>
+      <div class="container">
+        <h2>Step 5  Turkey Reclassified ESA CCI Land Cover</h2>
+       
+      </div>
+    </header>
+  
+    <div class="content dark style2">
+      <div class="container">
+        <div class="row">
+            <div>
+                
+                <p>We retrieved the ESA CCI Land Cover 2022 dataset from the Copernicus Climate Data Store. 
+                  After importing it into QGIS and reprojecting it, we simplified the original 22-class legend into 11 
+                  generalized categories based on the IPCC classification scheme using the Reclassify by Table 
+                  tool .</p>
+                
+            </div>
+            <div class="image-grid">
+                <div class="image-box_1">
+                  <img src="assets/images/reclassified.jpg"/>
+                  <div class="caption">Turkey Reclassified ESA CCI Land Cover</div>
+                </div>
+               
+              </div> 
+             
+          
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+
+  <section id="second" class="main">
+    <header>
+      <div class="container">
+        <h2> Step 6  Turkey zonal statistics vector layer</h2>
+       
+      </div>
+    </header>
+  
+    <div class="content dark style2">
+      <div class="container">
+        <div class="row">
+            <div>
+              
+                <p>To ensure alignment, we resampled the CAMS pollutant rasters to match the land cover 
+                  resolution. This enabled us to perform zonal statistics to calculate mean and maximum pollutant 
+                  values per land cover type (urban) for the years 2013 to 2022 .</p>
+                
+            </div>
+
+           <div class="image-grid">
+                <div class="image-box">
+                  <img src="assets/images/NO2_zonal_statistic.jpg"/>
+                  <div class="caption">Turkey NO₂ zonal statistics</div>
+                </div>
+                <div class="image-box">
+                  <img src="assets/images/PM25_zonal_statistic.jpg"  />
+                  <div class="caption">Turkey PM₂.₅ zonal statistics</div>
+                </div>
+                <div class="image-box">
+                  <img src="assets/images/PM10_zonal_statistic.jpg" />
+                  <div class="caption">Turkey PM₁₀ zonal statistics</div>
+                </div>
+              </div> 
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <section id="second" class="main">
+    <header>
+      <div class="container">
+        <h2> Step 7  Population Exposure and Bivariate Mapping</h2>
+    
+      </div>
+    </header>
+  
+    <div class="content dark style2">
+      <div class="container">
+        <div class="row">
+            <div>
+                
+                <p>We incorporated 2020 population data from WorldPop, which provides gridded population 
+                  estimates. The dataset was reclassified into five quantile-based population density classes using 
+                  the r.quantiles tool, allowing for more meaningful exposure analysis .</p>
+                <p>To assess combined pollution and exposure, we used FAO GAUL Level 2 administrative 
+                  boundaries and performed zonal statistics for both population and pollutant concentration maps. 
+                  This allowed us to generate bivariate maps showing the intersection of high/low pollution with 
+                  high/low population density, represented via a 5x5 color matrix .</p>
+            </div>
+          <div class="image-grid">
+                <div class="image-box">
+                  <img src="assets/images/NO2_bivarate.jpg"/>
+                  <div class="caption">Turkey NO₂ bivariate map</div>
+                </div>
+                <div class="image-box">
+                  <img src="assets/images/PM25_bivarate.jpg"  />
+                  <div class="caption">Turkey PM₂.₅ bivariate map</div>
+                </div>
+                <div class="image-box">
+                  <img src="assets/images/PM10_bivarate.jpg" />
+                  <div class="caption">Turkey PM₁₀ bivariate map</div>
+                </div>
+              </div> 
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="second" class="main">
+    <header>
+      <div class="container">
+        <h2> Step 8 Exposure Summary with Pie Charts</h2>
+   
+      </div>
+    </header>
+  
+    <div class="content dark style2">
+      <div class="container">
+        <div class="row">
+            <div>
+                
+                <p>Finally, we dissolved the bivariate layers by pollution class and calculated the total population per 
+                  class using zonal statistics. These results were visualized with pie charts, showing the proportion 
+                  of the population exposed to different pollution levels, providing a clear overview of public health 
+                  risk by pollutant type .</p>
+            
+            </div>
+          
+        </div>
+
+        <footer>
+          
+            <a href="results.html" class="button">See The Results</a>
+
+        </footer>
+
+      </div>
+    </div>
+  </section>
+  
+  
