@@ -310,20 +310,7 @@
     border-radius: 4px;
   }
 
-  .image-box_41 img {
-    width: 500px;
-    height: 350px;
-    object-fit: cover;
-    border: 2px solid #ccc;
-    border-radius: 4px;
-  }
-  
-  .image-box_41 {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 20px 0;
-  }
+
   
 /* Legend*/
 .legend-container {
