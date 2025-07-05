@@ -91,7 +91,7 @@ layer.on('change:visible', () => {
     }
 });
 
-    if (title === "Turkey_pm2p5_concentration_map_2020") {
+    if (title === "pm2p5 concentration 2020") {
         layer.setVisible(true);
         mainLegendLayer = layer;
     }
