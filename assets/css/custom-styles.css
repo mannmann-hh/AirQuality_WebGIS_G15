@@ -310,6 +310,13 @@
     border-radius: 4px;
   }
 
+  .image-box_bi img {
+    width:1300px;
+    height: 500px;
+    object-fit: cover;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+  }
 
   
 /* Legend*/
@@ -328,6 +335,7 @@
   box-shadow: 0 0 8px rgba(0,0,0,0.15);
   font-family: sans-serif;
   transition: all 0.3s ease;
+  
 }
 
 
